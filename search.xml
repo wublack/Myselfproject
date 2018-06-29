@@ -3,21 +3,6 @@
   
     
     <entry>
-      <title>nginx ssl配置（免费ssl）</title>
-      <link href="/Myselfproject/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/"/>
-      <url>/Myselfproject/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/</url>
-      <content type="html"><![CDATA[<h1 id="nginx-ssl配置（免费ssl）"><a href="#nginx-ssl配置（免费ssl）" class="headerlink" title="nginx ssl配置（免费ssl）"></a>nginx ssl配置（免费ssl）</h1><h3 id="强烈建议有钱人使用付费ssl"><a href="#强烈建议有钱人使用付费ssl" class="headerlink" title="==强烈建议有钱人使用付费ssl=="></a>==强烈建议有钱人使用付费ssl==</h3><ol><li><p>首先在<a href="https://freessl.org" target="_blank" rel="noopener">freessl</a>官网注册账号</p></li><li><p>然后在首页输入你的网站地址 点击创建  <img src="https://www.wl52056.top/images/blog_201806_back1.png" alt="image"></p></li></ol><ol><li><p>点击把文件下载，把下载下来的文件放到提示的目录下面(‘.well-known/pki-validation’)  <img src="https://www.wl52056.top/images/blog_back_201806123.png" alt="image">  ==ps:能复制就不要手写 ==</p><p> ==ps:记得关闭防火墙，开放端口，在这里我是浪费了很多时间，nginx记得配置txt能访问到==</p></li></ol><blockquote><pre><code>firewall-cmd  --zone=public --add-port=80/tcp</code></pre></blockquote><ol><li><p>最后点击验证。通过之后会提供证书压缩文件给你下载  <img src="https://www.wl52056.top/images/blog_nginx_config_back221.png" alt="image"></p></li><li><p>最最后配置你的nginx</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  listen 443 ssl http2;</span><br><span class="line">  ssl_certificate /usr/local/nginx/conf/ssl/app.wl52056.top.pem;</span><br><span class="line">  ssl_certificate_key /usr/local/nginx/conf/ssl/app.wl52056.top.key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li><p>验证一下访问你配置的域名</p><p><img src="https://www.wl52056.top/images/blog_nginx_back_https234.png" alt="image"><br>访问成功,说明配置成功</p></li></ol>]]></content>
-      
-      
-        <tags>
-            
-            <tag> nginx linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>linux mysql 用户配置</title>
       <link href="/Myselfproject/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
       <url>/Myselfproject/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/</url>
@@ -27,6 +12,21 @@
         <tags>
             
             <tag> linux mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>nginx ssl配置（免费ssl）</title>
+      <link href="/Myselfproject/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/"/>
+      <url>/Myselfproject/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/</url>
+      <content type="html"><![CDATA[<h1 id="nginx-ssl配置（免费ssl）"><a href="#nginx-ssl配置（免费ssl）" class="headerlink" title="nginx ssl配置（免费ssl）"></a>nginx ssl配置（免费ssl）</h1><h3 id="强烈建议有钱人使用付费ssl"><a href="#强烈建议有钱人使用付费ssl" class="headerlink" title="==强烈建议有钱人使用付费ssl=="></a>==强烈建议有钱人使用付费ssl==</h3><ol><li><p>首先在<a href="https://freessl.org" target="_blank" rel="noopener">freessl</a>官网注册账号</p></li><li><p>然后在首页输入你的网站地址 点击创建  <img src="https://www.wl52056.top/images/blog_201806_back1.png" alt="image"></p></li></ol><ol><li><p>点击把文件下载，把下载下来的文件放到提示的目录下面(‘.well-known/pki-validation’)  <img src="https://www.wl52056.top/images/blog_back_201806123.png" alt="image">  ==ps:能复制就不要手写 ==</p><p> ==ps:记得关闭防火墙，开放端口，在这里我是浪费了很多时间，nginx记得配置txt能访问到==</p></li></ol><blockquote><pre><code>firewall-cmd  --zone=public --add-port=80/tcp</code></pre></blockquote><ol><li><p>最后点击验证。通过之后会提供证书压缩文件给你下载  <img src="https://www.wl52056.top/images/blog_nginx_config_back221.png" alt="image"></p></li><li><p>最最后配置你的nginx</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  listen 443 ssl http2;</span><br><span class="line">  ssl_certificate /usr/local/nginx/conf/ssl/app.wl52056.top.pem;</span><br><span class="line">  ssl_certificate_key /usr/local/nginx/conf/ssl/app.wl52056.top.key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li><p>验证一下访问你配置的域名</p><p><img src="https://www.wl52056.top/images/blog_nginx_back_https234.png" alt="image"><br>访问成功,说明配置成功</p></li></ol>]]></content>
+      
+      
+        <tags>
+            
+            <tag> nginx linux </tag>
             
         </tags>
       
