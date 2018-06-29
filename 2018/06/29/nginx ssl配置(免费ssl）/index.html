@@ -7,7 +7,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="nginx ssl配置（免费ssl）==强烈建议有钱人使用付费ssl== 首先在freessl官网注册账号  然后在首页输入你的网站地址 点击创建      点击把文件下载，把下载下来的文件放到提示的目录下面(‘.well-known/pki-validation’)    ==ps:能复制就不要手写 ==  ==ps:记得关闭防火墙，开放端口，在这里我是浪费了很多时间，nginx记得配置txt能">
-<meta name="keywords" content="nginx">
+<meta name="keywords" content="nginx linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx ssl配置（免费ssl）">
 <meta property="og:url" content="http://wublack.github.io/Myselfproject/2018/06/29/nginx ssl配置(免费ssl）/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://www.wl52056.top/images/blog_back_201806123.png">
 <meta property="og:image" content="https://www.wl52056.top/images/blog_nginx_config_back221.png">
 <meta property="og:image" content="https://www.wl52056.top/images/blog_nginx_back_https234.png">
-<meta property="og:updated_time" content="2018-06-29T03:15:51.258Z">
+<meta property="og:updated_time" content="2018-06-29T07:45:26.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx ssl配置（免费ssl）">
 <meta name="twitter:description" content="nginx ssl配置（免费ssl）==强烈建议有钱人使用付费ssl== 首先在freessl官网注册账号  然后在首页输入你的网站地址 点击创建      点击把文件下载，把下载下来的文件放到提示的目录下面(‘.well-known/pki-validation’)    ==ps:能复制就不要手写 ==  ==ps:记得关闭防火墙，开放端口，在这里我是浪费了很多时间，nginx记得配置txt能">
@@ -64,13 +64,13 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/Myselfproject/">Inici</a></li>
+          <li><a href="/Myselfproject/">Home</a></li>
          
-          <li><a href="/Myselfproject/about/">Qui som</a></li>
+          <li><a href="/Myselfproject/about/">About</a></li>
          
-          <li><a href="/Myselfproject/archives/">Articles</a></li>
+          <li><a href="/Myselfproject/archives/">Writing</a></li>
          
-          <li><a href="/Myselfproject/projects_url">Projectes</a></li>
+          <li><a href="https://github.com/wublack">Projects</a></li>
         
       </ul>
     </span>
@@ -79,15 +79,15 @@
       <ul>
         
         
-        <li><a class="icon" href="/Myselfproject/2018/06/28/Hexo 快速构建blog/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/Myselfproject/2018/06/29/linux mysql 用户配置/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
-      <span id="i-next" class="info" style="display:none;">Post Següent</span>
-      <span id="i-top" class="info" style="display:none;">Adalt</span>
-      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -136,7 +136,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/Myselfproject/tags/nginx/">nginx</a>
+        <a class="tag-link" href="/Myselfproject/tags/nginx-linux/">nginx linux</a>
     </div>
 
 
@@ -185,13 +185,13 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/Myselfproject/">Inici</a></li>
+          <li><a href="/Myselfproject/">Home</a></li>
          
-          <li><a href="/Myselfproject/about/">Qui som</a></li>
+          <li><a href="/Myselfproject/about/">About</a></li>
          
-          <li><a href="/Myselfproject/archives/">Articles</a></li>
+          <li><a href="/Myselfproject/archives/">Writing</a></li>
          
-          <li><a href="/Myselfproject/projects_url">Projectes</a></li>
+          <li><a href="https://github.com/wublack">Projects</a></li>
         
       </ul>
     </div>
@@ -217,10 +217,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
         <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -235,13 +235,13 @@
     <nav>
       <ul>
          
-          <li><a href="/Myselfproject/">Inici</a></li>
+          <li><a href="/Myselfproject/">Home</a></li>
          
-          <li><a href="/Myselfproject/about/">Qui som</a></li>
+          <li><a href="/Myselfproject/about/">About</a></li>
          
-          <li><a href="/Myselfproject/archives/">Articles</a></li>
+          <li><a href="/Myselfproject/archives/">Writing</a></li>
          
-          <li><a href="/Myselfproject/projects_url">Projectes</a></li>
+          <li><a href="https://github.com/wublack">Projects</a></li>
         
       </ul>
     </nav>
