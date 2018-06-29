@@ -5,9 +5,9 @@
   <subtitle>一个人的开发故事</subtitle>
   <link href="/Myselfproject/atom.xml" rel="self"/>
   
-  <link href="http://wublack.github.io/Myselfproject/"/>
+  <link href="https://github.com/wublack/wl52056.github.io.git/"/>
   <updated>2018-06-29T07:45:26.409Z</updated>
-  <id>http://wublack.github.io/Myselfproject/</id>
+  <id>https://github.com/wublack/wl52056.github.io.git/</id>
   
   <author>
     <name>Tim Black</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>linux mysql 用户配置</title>
-    <link href="http://wublack.github.io/Myselfproject/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
-    <id>http://wublack.github.io/Myselfproject/2018/06/29/linux mysql 用户配置/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2018/06/29/linux mysql 用户配置/</id>
     <published>2018-06-29T03:09:22.000Z</published>
     <updated>2018-06-29T07:45:26.409Z</updated>
     
@@ -36,14 +36,14 @@
     </summary>
     
     
-      <category term="linux mysql" scheme="http://wublack.github.io/Myselfproject/tags/linux-mysql/"/>
+      <category term="linux mysql" scheme="https://github.com/wublack/wl52056.github.io.git/tags/linux-mysql/"/>
     
   </entry>
   
   <entry>
     <title>nginx ssl配置（免费ssl）</title>
-    <link href="http://wublack.github.io/Myselfproject/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/"/>
-    <id>http://wublack.github.io/Myselfproject/2018/06/29/nginx ssl配置(免费ssl）/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2018/06/29/nginx ssl配置(免费ssl）/</id>
     <published>2018-06-29T03:09:22.000Z</published>
     <updated>2018-06-29T07:45:26.365Z</updated>
     
@@ -59,18 +59,18 @@
     </summary>
     
     
-      <category term="nginx linux" scheme="http://wublack.github.io/Myselfproject/tags/nginx-linux/"/>
+      <category term="nginx linux" scheme="https://github.com/wublack/wl52056.github.io.git/tags/nginx-linux/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 快速构建属于你自己的blog</title>
-    <link href="http://wublack.github.io/Myselfproject/2018/06/28/Hexo%20%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BAblog/"/>
-    <id>http://wublack.github.io/Myselfproject/2018/06/28/Hexo 快速构建blog/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2018/06/28/Hexo%20%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BAblog/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2018/06/28/Hexo 快速构建blog/</id>
     <published>2018-06-28T06:19:04.724Z</published>
     <updated>2018-06-28T06:19:04.748Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
@@ -82,14 +82,14 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://wublack.github.io/Myselfproject/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://github.com/wublack/wl52056.github.io.git/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>第一次搭建博客</title>
-    <link href="http://wublack.github.io/Myselfproject/2018/06/22/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://wublack.github.io/Myselfproject/2018/06/22/第一次搭建博客/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2018/06/22/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2018/06/22/第一次搭建博客/</id>
     <published>2018-06-22T02:50:38.000Z</published>
     <updated>2018-06-28T06:19:04.731Z</updated>
     
@@ -106,14 +106,14 @@
     </summary>
     
     
-      <category term="blog" scheme="http://wublack.github.io/Myselfproject/tags/blog/"/>
+      <category term="blog" scheme="https://github.com/wublack/wl52056.github.io.git/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Android 常见问题</title>
-    <link href="http://wublack.github.io/Myselfproject/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-    <id>http://wublack.github.io/Myselfproject/2018/05/22/Android开发常见问题/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2018/05/22/Android开发常见问题/</id>
     <published>2018-05-22T02:38:22.000Z</published>
     <updated>2018-06-28T06:19:04.723Z</updated>
     
@@ -122,14 +122,14 @@
     </summary>
     
     
-      <category term="Android" scheme="http://wublack.github.io/Myselfproject/tags/Android/"/>
+      <category term="Android" scheme="https://github.com/wublack/wl52056.github.io.git/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>Flutter 初识</title>
-    <link href="http://wublack.github.io/Myselfproject/2018/04/10/flutter%E5%88%9D%E8%AF%86/"/>
-    <id>http://wublack.github.io/Myselfproject/2018/04/10/flutter初识/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2018/04/10/flutter%E5%88%9D%E8%AF%86/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2018/04/10/flutter初识/</id>
     <published>2018-04-10T12:51:38.000Z</published>
     <updated>2018-06-28T06:19:04.725Z</updated>
     
@@ -146,14 +146,14 @@
     </summary>
     
     
-      <category term="混合开发" scheme="http://wublack.github.io/Myselfproject/tags/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/"/>
+      <category term="混合开发" scheme="https://github.com/wublack/wl52056.github.io.git/tags/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>Vue 初探</title>
-    <link href="http://wublack.github.io/Myselfproject/2017/06/22/vue%E5%88%9D%E6%8E%A2/"/>
-    <id>http://wublack.github.io/Myselfproject/2017/06/22/vue初探/</id>
+    <link href="https://github.com/wublack/wl52056.github.io.git/2017/06/22/vue%E5%88%9D%E6%8E%A2/"/>
+    <id>https://github.com/wublack/wl52056.github.io.git/2017/06/22/vue初探/</id>
     <published>2017-06-22T02:50:38.000Z</published>
     <updated>2018-06-28T06:19:04.728Z</updated>
     
@@ -169,7 +169,7 @@
     </summary>
     
     
-      <category term="Vue" scheme="http://wublack.github.io/Myselfproject/tags/Vue/"/>
+      <category term="Vue" scheme="https://github.com/wublack/wl52056.github.io.git/tags/Vue/"/>
     
   </entry>
   
