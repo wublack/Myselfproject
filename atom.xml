@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wublack.github.io/Myselfproject/"/>
-  <updated>2018-06-29T08:49:01.709Z</updated>
+  <updated>2018-07-02T01:15:33.705Z</updated>
   <id>http://wublack.github.io/Myselfproject/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git clone时出现 error:inflate:data stream error(incorrect data check)</title>
+    <link href="http://wublack.github.io/Myselfproject/2018/07/01/git%20clone%20%E5%87%BA%E7%8E%B0data%20stream%20error(incorrect%20data%20check)/"/>
+    <id>http://wublack.github.io/Myselfproject/2018/07/01/git clone 出现data stream error(incorrect data check)/</id>
+    <published>2018-07-01T09:50:38.000Z</published>
+    <updated>2018-07-02T01:15:33.705Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>最近在Mac上git clone服务器上的项目时，不管怎么样都clone不下来就算100%也会报错，内容如下</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">remote: Counting objects: 11326, done.</span><br><span class="line">remote: Compressing objects: 100% (7538/7538), done.</span><br><span class="line">remote: Total 11326 (delta 5828), reused 7632 (delta 3000)</span><br><span class="line">Receiving objects: 100% (11326/11326), 153.66 MiB | 258.00 KiB/s, done.</span><br><span class="line">error: inflate: data stream error (incorrect data check)</span><br><span class="line">fatal: serious inflate inconsistency</span><br><span class="line">fatal: index-pack failed</span><br></pre></td></tr></table></figure><p>其实原因很简单，但是因为你的git 版本太低了!~！解决方法：<br>==1.利用brew 安装一个最新的git就行了==如果没有安装brew可<a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">参考</a><br>==2.可能是你挂载盘的问题切换到主目录，clone下来，在mv一下==<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#复制这个命令执行即可</span><br><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure></p><ol start="2"><li><p>安装完成之后,执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew unlink git</span><br></pre></td></tr></table></figure></li><li><p>然后在执行，下面的命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure></li></ol><p>执行完成之后，会提示安装版本和安装路径</p><p>最后把安装路径替换环境变量~/.bash_profile文件，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;/usr/local/git/bin:$PATH&quot;</span><br></pre></td></tr></table></figure></p><ol start="4"><li><p>然后执行source ~/.bash_profile ，立即生效</p></li><li><p>然后新打开一个终端执行git命令就可以了。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;最近在Mac上git clone服务器上的项目时，不管怎么样都clone不下来就算100%也会报错，内容如下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://wublack.github.io/Myselfproject/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>linux mysql 用户配置</title>
@@ -60,6 +86,30 @@
     
     
       <category term="nginx linux" scheme="http://wublack.github.io/Myselfproject/tags/nginx-linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux tomcat虚拟主机配置</title>
+    <link href="http://wublack.github.io/Myselfproject/2018/06/29/linux%20tomcat%20%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/"/>
+    <id>http://wublack.github.io/Myselfproject/2018/06/29/linux tomcat 虚拟主机配置/</id>
+    <published>2018-06-29T03:09:22.000Z</published>
+    <updated>2018-06-29T09:26:38.921Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="tomcat虚拟主机配置"><a href="#tomcat虚拟主机配置" class="headerlink" title="tomcat虚拟主机配置"></a>tomcat虚拟主机配置</h1><ol><li><p>安装好<a href="http://tomcat.apache.org//" target="_blank" rel="noopener">tomcat</a> <a href="http://www.nginx.cn/doc/" target="_blank" rel="noopener">nginx</a> 搭建好Java开发环境 也可参照<a href="https://oneinstack.com/auto/" target="_blank" rel="noopener">onestack</a>一键搭建。如图：<br><img src="https://www.wl52056.top/images/blog_tomcat_backq2341.png" alt="image"></p></li><li><p>一键添加虚拟主机</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">./vhost.sh</span><br><span class="line"></span><br><span class="line">#######################################################################</span><br><span class="line">#       OneinStack for CentOS/RadHat 6+ Debian 7+ and Ubuntu 12+      #</span><br><span class="line">#       For more information please visit https://oneinstack.com      #</span><br><span class="line">#######################################################################</span><br><span class="line"></span><br><span class="line">What Are You Doing?</span><br><span class="line">1. Use HTTP Only</span><br><span class="line">2. Use your own SSL Certificate and Key</span><br><span class="line">3. Use Let&apos;s Encrypt to Create SSL Certificate and Key</span><br><span class="line">q. Exit</span><br><span class="line">Please input the correct option: 2</span><br><span class="line"></span><br><span class="line">Please input domain(example: www.example.com): demo.wl52056.top</span><br><span class="line">domain=demo.wl52056.top</span><br><span class="line"></span><br><span class="line">Please input the directory for the domain:demo.wl52056.top :</span><br><span class="line">(Default directory: /data/wwwroot/demo.wl52056.top): </span><br><span class="line">Virtual Host Directory=/data/wwwroot/demo.wl52056.top</span><br><span class="line"></span><br><span class="line">Create Virtul Host directory......</span><br><span class="line">set permissions of Virtual Host directory......</span><br><span class="line"></span><br><span class="line">Do you want to add more domain name? [y/n]: n</span><br><span class="line"></span><br><span class="line">Do you want to redirect all HTTP requests to HTTPS? [y/n]: y</span><br><span class="line"></span><br><span class="line">You are about to be asked to enter information that will be incorporated</span><br><span class="line">into your certificate request.</span><br><span class="line">What you are about to enter is what is called a Distinguished Name or a DN.</span><br><span class="line">There are quite a few fields but you can leave some blank</span><br><span class="line">For some fields there will be a default value,</span><br><span class="line">If you enter &apos;.&apos;, the field will be left blank.</span><br><span class="line"></span><br><span class="line">Country Name (2 letter code) [CN]: </span><br><span class="line"></span><br><span class="line">State or Province Name (full name) [Shanghai]: </span><br><span class="line"></span><br><span class="line">Locality Name (eg, city) [Shanghai]: </span><br><span class="line"></span><br><span class="line">Organization Name (eg, company) [Example Inc.]: </span><br><span class="line"></span><br><span class="line">Organizational Unit Name (eg, section) [IT Dept.]: </span><br><span class="line"></span><br><span class="line">Do you want to add hotlink protection? [y/n]: n</span><br><span class="line"></span><br><span class="line">Allow Nginx/Tengine/OpenResty access_log? [y/n]: y</span><br><span class="line">You access log file=/data/wwwlogs/demo.wl52056.top_nginx.log</span><br><span class="line"></span><br><span class="line">nginx: [warn] &quot;ssl_stapling&quot; ignored, issuer certificate not found for certificate &quot;/usr/local/nginx/conf/ssl/demo.wl52056.top.crt&quot;</span><br><span class="line">nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful</span><br><span class="line">Reload Nginx......</span><br><span class="line">nginx: [warn] &quot;ssl_stapling&quot; ignored, issuer certificate not found for certificate &quot;/usr/local/nginx/conf/ssl/demo.wl52056.top.crt&quot;</span><br><span class="line">Stoping Tomcat</span><br><span class="line">Using CATALINA_BASE:   /usr/local/tomcat</span><br><span class="line">Using CATALINA_HOME:   /usr/local/tomcat</span><br><span class="line">Using CATALINA_TMPDIR: /usr/local/tomcat/temp</span><br><span class="line">Using JRE_HOME:        /usr/java/jdk1.8.0_141</span><br><span class="line">Using CLASSPATH:       /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar</span><br><span class="line">waiting for processes to exit</span><br><span class="line">Starting tomcat</span><br><span class="line">bash: /usr/local/tomcat/bin/startup.sh: Permission denied</span><br><span class="line">Tomcat is not running</span><br><span class="line"></span><br><span class="line">#######################################################################</span><br><span class="line">#       OneinStack for CentOS/RadHat 6+ Debian 7+ and Ubuntu 12+      #</span><br><span class="line">#       For more information please visit https://oneinstack.com      #</span><br><span class="line">#######################################################################</span><br><span class="line">Your domain:                  demo.wl52056.top</span><br><span class="line">Nginx Virtualhost conf:       /usr/local/nginx/conf/vhost/demo.wl52056.top.conf</span><br><span class="line">Tomcat Virtualhost conf:      /usr/local/tomcat/conf/vhost/demo.wl52056.top.xml</span><br><span class="line">Directory of:                 /data/wwwroot/demo.wl52056.top</span><br><span class="line">Self-signed SSL Certificate:  /usr/local/nginx/conf/ssl/demo.wl52056.top.crt</span><br><span class="line">SSL Private Key:              /usr/local/nginx/conf/ssl/demo.wl52056.top.key</span><br><span class="line">SSL CSR File:                 /usr/local/nginx/conf/ssl/demo.wl52056.top.csr</span><br><span class="line">[root@izuf63kacqfe8wm1qfu094z oneinstack]#</span><br></pre></td></tr></table></figure><ol start="3"><li>查看/usr/local/nginx/conf/vhost/demo.wl52056.top.conf和/usr/local/tomcat/conf/vhost/demo.wl52056.top.xml。如果没有自动生成可参考如下：<br>xml:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host name=&quot;demo.wl52056.top&quot; appBase=&quot;/data/wwwroot/demo.wl52056.top&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">  &lt;Context path=&quot;&quot; docBase=&quot;/data/wwwroot/demo.wl52056.top&quot; reloadable=&quot;false&quot; crossContext=&quot;true&quot;/&gt;</span><br><span class="line">  &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot;</span><br><span class="line">    prefix=&quot;demo.wl52056.top_access_log&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;</span><br><span class="line">  &lt;Valve className=&quot;org.apache.catalina.valves.RemoteIpValve&quot; remoteIpHeader=&quot;X-Forwarded-For&quot;</span><br><span class="line">    protocolHeader=&quot;X-Forwarded-Proto&quot; protocolHeaderHttpsValue=&quot;https&quot;/&gt;</span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure></li></ol><p>conf:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  listen 443 ssl http2;</span><br><span class="line">  ssl_certificate /usr/local/nginx/conf/ssl/demo.wl52056.top.crt;</span><br><span class="line">  ssl_certificate_key /usr/local/nginx/conf/ssl/demo.wl52056.top.key;</span><br><span class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">  ssl_ciphers EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;</span><br><span class="line">  ssl_prefer_server_ciphers on;</span><br><span class="line">  ssl_session_timeout 10m;</span><br><span class="line">  ssl_session_cache builtin:1000 shared:SSL:10m;</span><br><span class="line">  ssl_buffer_size 1400;</span><br><span class="line">  add_header Strict-Transport-Security max-age=15768000;</span><br><span class="line">  ssl_stapling on;</span><br><span class="line">  ssl_stapling_verify on;</span><br><span class="line">  server_name demo.wl52056.top;</span><br><span class="line">  access_log /data/wwwlogs/demo.wl52056.top_nginx.log combined;</span><br><span class="line">  index index.html index.htm index.jsp;</span><br><span class="line">  root /data/wwwroot/demo.wl52056.top;</span><br><span class="line"></span><br><span class="line">  #error_page 404 /404.html;</span><br><span class="line">  #error_page 502 /502.html;</span><br><span class="line"></span><br><span class="line">  location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|mp4|ico)$ &#123;</span><br><span class="line">    expires 30d;</span><br><span class="line">    access_log off;</span><br><span class="line">  &#125;</span><br><span class="line">  location ~ .*\.(js|css|txt)?$ &#123;</span><br><span class="line">    expires 7d;</span><br><span class="line">    access_log off;</span><br><span class="line">  &#125;</span><br><span class="line">  location ~ /\.ht &#123;</span><br><span class="line">    deny all;</span><br><span class="line">  &#125;</span><br><span class="line">  location ~ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8080;</span><br><span class="line">    include proxy.conf;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="4"><li>访问demo.wl52056.top 能访问说明配置成功</li><li><a href="http://blog.wl52056.top/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/" target="_blank" rel="noopener">配置ssl可参考我的另一篇博文</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;tomcat虚拟主机配置&quot;&gt;&lt;a href=&quot;#tomcat虚拟主机配置&quot; class=&quot;headerlink&quot; title=&quot;tomcat虚拟主机配置&quot;&gt;&lt;/a&gt;tomcat虚拟主机配置&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装好&lt;a href=&quot;http://to
+      
+    
+    </summary>
+    
+    
+      <category term="linux tomcat" scheme="http://wublack.github.io/Myselfproject/tags/linux-tomcat/"/>
     
   </entry>
   
@@ -115,14 +165,69 @@
     <link href="http://wublack.github.io/Myselfproject/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
     <id>http://wublack.github.io/Myselfproject/2018/05/22/Android开发常见问题/</id>
     <published>2018-05-22T02:38:22.000Z</published>
-    <updated>2018-06-28T06:19:04.723Z</updated>
+    <updated>2018-07-02T01:04:41.288Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>常常在gradle编译时，出现异常，但是打印的异常信息较少不能准确定位到底是哪里有问题可执行如下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew processDebugManifest --stacktrace</span><br></pre></td></tr></table></figure></li><li><p>查看当前activity</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys activity activities</span><br></pre></td></tr></table></figure></li><li><p>Android Gson 对象Map转换 <a href="https://www.cnblogs.com/zsychanpin/p/6937832.html" target="_blank" rel="noopener">参考</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSONParse pare = new JSONParse();</span><br></pre></td></tr></table></figure></li><li><p>Android gradle 下载目录更改</p></li></ol>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;常常在gradle编译时，出现异常，但是打印的异常信息较少不能准确定位到底是哪里有问题可执行如下命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+      
     
     </summary>
     
     
       <category term="Android" scheme="http://wublack.github.io/Myselfproject/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android gradle 下载目录更改</title>
+    <link href="http://wublack.github.io/Myselfproject/2018/05/22/Android%20gradle%20%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95%E6%9B%B4%E6%94%B9/"/>
+    <id>http://wublack.github.io/Myselfproject/2018/05/22/Android gradle 下载目录更改/</id>
+    <published>2018-05-22T02:38:22.000Z</published>
+    <updated>2018-07-02T01:04:41.286Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，"><a href="#通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，" class="headerlink" title="通常我们gradle下载目录在用户下面例如window在user/admin/.gradle目录下，"></a>通常我们gradle下载目录在用户下面例如window在user/admin/.gradle目录下，</h3><h3 id="但是这个gradle可能项目不一样，下载的gradle本-也不一样就会导致C盘内存空间减少，那有啥好办法没呢"><a href="#但是这个gradle可能项目不一样，下载的gradle本-也不一样就会导致C盘内存空间减少，那有啥好办法没呢" class="headerlink" title="但是这个gradle可能项目不一样，下载的gradle本  也不一样就会导致C盘内存空间减少，那有啥好办法没呢"></a>但是这个gradle可能项目不一样，下载的gradle本  也不一样就会导致C盘内存空间减少，那有啥好办法没呢</h3><h3 id="答案肯定是有的"><a href="#答案肯定是有的" class="headerlink" title="答案肯定是有的"></a>答案肯定是有的</h3><p>在你项目的gradle.properties文件下添加一句</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle.user.home=D:/Cache/.gradle</span><br></pre></td></tr></table></figure><p>但是这也有个缺点就是每个项目都要加。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，&quot;&gt;&lt;a href=&quot;#通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+      <category term="Android gradle" scheme="http://wublack.github.io/Myselfproject/tags/Android-gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android jenkins 自动化部署</title>
+    <link href="http://wublack.github.io/Myselfproject/2018/04/27/Android%20Jenkins%20%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    <id>http://wublack.github.io/Myselfproject/2018/04/27/Android Jenkins 自动化部署/</id>
+    <published>2018-04-27T08:40:00.000Z</published>
+    <updated>2018-07-02T01:04:41.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>==ps:首先重要的条件是有一台已经装好jenkins服务器 具体安装jenkins到服务器请参考<a href="https://www.cnblogs.com/h--d/p/5673085.html" target="_blank" rel="noopener">这里</a> ==</p><h3 id="首先在jenkins上做好准备工作，那就是装插件"><a href="#首先在jenkins上做好准备工作，那就是装插件" class="headerlink" title="首先在jenkins上做好准备工作，那就是装插件"></a>首先在jenkins上做好准备工作，那就是装插件</h3><p>系统管理-&gt; 插件管理<br><img src="http://note.youdao.com/yws/res/1114/45DF43AFAD8F458F8C657587E8AFC2B6" alt="image"></p><p><strong>装好github、gradle等插件</strong></p><ol><li><p>第一步新建：<br>在Jenkins服务器上新建任务，取一个响亮的名字，选择构建一个自由风格的软件项目，轻轻的点击确定按钮，任务就建好了，系统自动进入Jenkins任务配置页面</p></li><li><p>第二步配置：<br>添加描述；源码管理，添加路径，添加用户密码，添加分支（记得装github插件）；<br><img src="https:///note.youdao.com/yws/res/1105/D66A4D151FA5400E9F71864AF6E02D62" alt="image"></p></li><li><p>第三步构建项目触发器：<br>在你的gogs项目仓库设置中管理web钩子<br><img src="https:////note.youdao.com/yws/res/1192/A0F08A3BF29440F4B4A458D358FF5D76" alt="image"></p></li><li><p>第四步构建：<br>现在android的项目是用gradle构建，所以要选择invoke gradle script （记得先装gradle插件）<br><img src="https://note.youdao.com/yws/res/1108/7044307C7AD0468D8FD9BB89DFDDA312" alt="image"></p></li><li><p>添加一个execute shell </p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#如执行打包命令 到command</span><br><span class="line">./gradlew assebleDebug/assembleRelease</span><br></pre></td></tr></table></figure><p><img src="https://note.youdao.com/yws/res/1120/06F5093ABC024C6287E493F86A445698" alt="image"></p><ol start="6"><li><p>接下来添加你要上传的平台（例如蒲公英）（记得装蒲公英插件）<a href="https://www.pgyer.com/doc/view/jenkins_plugin" target="_blank" rel="noopener">教程</a><br><img src="https://note.youdao.com/yws/res/1129/BB3372B237A34270BB2C0036FB34ED6A" alt="image"></p></li><li><p>接下来在添加一个excute shell 可以进行通知，（比如说钉钉机器人）<br><img src="https://note.youdao.com/yws/res/1140/9810A2C7743249F7955600269CE495C1" alt="image"></p></li></ol><p><strong>==就此完成。看似简单但是也有很多坑：==</strong></p><ol><li>要在jenkins服务器上把环境变量弄好，ANDROID_HOME,JAVA_HOME,GRADLE_HOME<br>首先：<a href="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgzSDK" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r24.4.1-linux.tgzSDK</a><br>然后：配置环境变量linux下（/etc/profile）</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export ANDROID_HOME=&apos;/opt/android-sdk-linux&apos;  </span><br><span class="line">export PATH=$ANDROID_HOME/tools:$PATH  </span><br><span class="line">export PATH=$ANDROID_HOME/platform-tools:$PATH</span><br></pre></td></tr></table></figure><ol start="2"><li>安装android sdk 所有的包</li></ol><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android update sdk --no-ui</span><br></pre></td></tr></table></figure>这样太占内存也可以使用 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sdkmanager &quot;platform-tools&quot; &quot;platforms;android-26&quot;</span><br><span class="line"></span><br><span class="line">sdkmanager  &quot;build-tools;26.0.2&quot;</span><br></pre></td></tr></table></figure>下载指定的包，节省空间也可以使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android list</span><br></pre></td></tr></table></figure> sdk命令查看有哪些包更新，然后通过$ ./android  update sdk -u -t  序号如：安装Build-tools, revision 24.0.3<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./android update sdk -u -t 3</span><br></pre></td></tr></table></figure>需要同意license，输入 y 回车即可</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;==ps:首先重要的条件是有一台已经装好jenkins服务器 具体安装jenkins到服务器请参考&lt;a href=&quot;https://www.cnblogs.com/h--d/p/5673085.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Android jenkins" scheme="http://wublack.github.io/Myselfproject/tags/Android-jenkins/"/>
     
   </entry>
   
