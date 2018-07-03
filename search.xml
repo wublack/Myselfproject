@@ -18,21 +18,6 @@
     </entry>
     
     <entry>
-      <title>linux mysql 用户配置</title>
-      <link href="/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
-      <url>/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h1 id="linux-mysql配置"><a href="#linux-mysql配置" class="headerlink" title="linux mysql配置"></a>linux mysql配置</h1><ol><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html" target="_blank" rel="noopener">安装MySQL数据库</a>请参考该网站。</li><li><p>执行mysql -u username -p #username为用户名</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></li><li><p>进入mysql，show databases;<br>查看所有的数据库。create database db_name 创建自己数据库<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">$ show databases;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">| wl_db              |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">#创建</span><br><span class="line">$ create database db_name;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure></li><li><p>添加用户<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#添加只读用户</span><br><span class="line">GRANT SELECT ON *.* TO &apos;wl_read&apos;@&apos;%&apos; IDENTIFIED BY &quot;wlread&quot;;</span><br><span class="line"></span><br><span class="line">#撤销添加</span><br><span class="line">revoke SELECT ON *.*  from &apos;readonly&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">#添加外网可读可写用户</span><br><span class="line">GRANT all privileges ON *.* TO &apos;db_user&apos;@&apos;%&apos; IDENTIFIED BY &quot;wl123@&quot;;</span><br><span class="line"></span><br><span class="line">#记得添加防火墙开放端口</span><br><span class="line">firewall-cmd  --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure></li></ol><p>基本操作先到这里，后续有什么问题，继续补充</p>]]></content>
-      
-      
-        <tags>
-            
-            <tag> linux mysql </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>nginx ssl配置（免费ssl）</title>
       <link href="/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/"/>
       <url>/2018/06/29/nginx%20ssl%E9%85%8D%E7%BD%AE(%E5%85%8D%E8%B4%B9ssl%EF%BC%89/</url>
@@ -63,15 +48,15 @@
     </entry>
     
     <entry>
-      <title>Android gradle 下载目录更改</title>
-      <link href="/2018/05/22/Android%20gradle%20%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95%E6%9B%B4%E6%94%B9/"/>
-      <url>/2018/05/22/Android%20gradle%20%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95%E6%9B%B4%E6%94%B9/</url>
-      <content type="html"><![CDATA[<h3 id="通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，"><a href="#通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，" class="headerlink" title="通常我们gradle下载目录在用户下面例如window在user/admin/.gradle目录下，"></a>通常我们gradle下载目录在用户下面例如window在user/admin/.gradle目录下，</h3><h3 id="但是这个gradle可能项目不一样，下载的gradle本-也不一样就会导致C盘内存空间减少，那有啥好办法没呢"><a href="#但是这个gradle可能项目不一样，下载的gradle本-也不一样就会导致C盘内存空间减少，那有啥好办法没呢" class="headerlink" title="但是这个gradle可能项目不一样，下载的gradle本  也不一样就会导致C盘内存空间减少，那有啥好办法没呢"></a>但是这个gradle可能项目不一样，下载的gradle本  也不一样就会导致C盘内存空间减少，那有啥好办法没呢</h3><h3 id="答案肯定是有的"><a href="#答案肯定是有的" class="headerlink" title="答案肯定是有的"></a>答案肯定是有的</h3><p>在你项目的gradle.properties文件下添加一句</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle.user.home=D:/Cache/.gradle</span><br></pre></td></tr></table></figure><p>但是这也有个缺点就是每个项目都要加。</p>]]></content>
+      <title>linux mysql 用户配置</title>
+      <link href="/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h1 id="linux-mysql配置"><a href="#linux-mysql配置" class="headerlink" title="linux mysql配置"></a>linux mysql配置</h1><ol><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html" target="_blank" rel="noopener">安装MySQL数据库</a>请参考该网站。</li><li><p>执行mysql -u username -p #username为用户名</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></li><li><p>进入mysql，show databases;<br>查看所有的数据库。create database db_name 创建自己数据库<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">$ show databases;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">| wl_db              |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">#创建</span><br><span class="line">$ create database db_name;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure></li><li><p>添加用户<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#添加只读用户</span><br><span class="line">GRANT SELECT ON *.* TO &apos;wl_read&apos;@&apos;%&apos; IDENTIFIED BY &quot;wlread&quot;;</span><br><span class="line"></span><br><span class="line">#撤销添加</span><br><span class="line">revoke SELECT ON *.*  from &apos;readonly&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">#添加外网可读可写用户</span><br><span class="line">GRANT all privileges ON *.* TO &apos;db_user&apos;@&apos;%&apos; IDENTIFIED BY &quot;wl123@&quot;;</span><br><span class="line"></span><br><span class="line">#记得添加防火墙开放端口</span><br><span class="line">firewall-cmd  --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure></li></ol><p>基本操作先到这里，后续有什么问题，继续补充</p>]]></content>
       
       
         <tags>
             
-            <tag> Android gradle </tag>
+            <tag> linux mysql </tag>
             
         </tags>
       
@@ -87,6 +72,21 @@
         <tags>
             
             <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android gradle 下载目录更改</title>
+      <link href="/2018/05/22/Android%20gradle%20%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95%E6%9B%B4%E6%94%B9/"/>
+      <url>/2018/05/22/Android%20gradle%20%E4%B8%8B%E8%BD%BD%E7%9B%AE%E5%BD%95%E6%9B%B4%E6%94%B9/</url>
+      <content type="html"><![CDATA[<h3 id="通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，"><a href="#通常我们gradle下载目录在用户下面例如window在user-admin-gradle目录下，" class="headerlink" title="通常我们gradle下载目录在用户下面例如window在user/admin/.gradle目录下，"></a>通常我们gradle下载目录在用户下面例如window在user/admin/.gradle目录下，</h3><h3 id="但是这个gradle可能项目不一样，下载的gradle本-也不一样就会导致C盘内存空间减少，那有啥好办法没呢"><a href="#但是这个gradle可能项目不一样，下载的gradle本-也不一样就会导致C盘内存空间减少，那有啥好办法没呢" class="headerlink" title="但是这个gradle可能项目不一样，下载的gradle本  也不一样就会导致C盘内存空间减少，那有啥好办法没呢"></a>但是这个gradle可能项目不一样，下载的gradle本  也不一样就会导致C盘内存空间减少，那有啥好办法没呢</h3><h3 id="答案肯定是有的"><a href="#答案肯定是有的" class="headerlink" title="答案肯定是有的"></a>答案肯定是有的</h3><p>在你项目的gradle.properties文件下添加一句</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle.user.home=D:/Cache/.gradle</span><br></pre></td></tr></table></figure><p>但是这也有个缺点就是每个项目都要加。</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Android gradle </tag>
             
         </tags>
       
