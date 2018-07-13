@@ -18,21 +18,6 @@
     </entry>
     
     <entry>
-      <title>linux mysql 用户配置</title>
-      <link href="/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
-      <url>/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h1 id="linux-mysql配置"><a href="#linux-mysql配置" class="headerlink" title="linux mysql配置"></a>linux mysql配置</h1><ol><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html" target="_blank" rel="noopener">安装MySQL数据库</a>请参考该网站。</li><li><p>执行mysql -u username -p #username为用户名</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></li><li><p>进入mysql，show databases;<br>查看所有的数据库。create database db_name 创建自己数据库<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">$ show databases;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">| wl_db              |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">#创建</span><br><span class="line">$ create database db_name;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure></li><li><p>添加用户<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#添加只读用户</span><br><span class="line">GRANT SELECT ON *.* TO &apos;wl_read&apos;@&apos;%&apos; IDENTIFIED BY &quot;wlread&quot;;</span><br><span class="line"></span><br><span class="line">#撤销添加</span><br><span class="line">revoke SELECT ON *.*  from &apos;readonly&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">#添加外网可读可写用户</span><br><span class="line">GRANT all privileges ON *.* TO &apos;db_user&apos;@&apos;%&apos; IDENTIFIED BY &quot;wl123@&quot;;</span><br><span class="line"></span><br><span class="line">#记得添加防火墙开放端口</span><br><span class="line">firewall-cmd  --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure></li></ol><p>基本操作先到这里，后续有什么问题，继续补充</p>]]></content>
-      
-      
-        <tags>
-            
-            <tag> linux mysql </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>linux tomcat虚拟主机配置</title>
       <link href="/2018/06/29/linux%20tomcat%20%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/06/29/linux%20tomcat%20%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</url>
@@ -63,15 +48,15 @@
     </entry>
     
     <entry>
-      <title>Android 常见问题</title>
-      <link href="/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
-      <url>/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<ol><li><p>常常在gradle编译时，出现异常，但是打印的异常信息较少不能准确定位到底是哪里有问题可执行如下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew processDebugManifest --stacktrace</span><br></pre></td></tr></table></figure></li><li><p>查看当前activity</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys activity activities</span><br></pre></td></tr></table></figure></li><li><p>Android Gson 对象Map转换 <a href="https://www.cnblogs.com/zsychanpin/p/6937832.html" target="_blank" rel="noopener">参考</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSONParse pare = new JSONParse();</span><br></pre></td></tr></table></figure></li><li><p>Android 颜色透明值列表<br><img src="http://note.youdao.com/noteshare?id=20681fb6df01851fe8ea60d402f99503&amp;sub=WEB4ec96fecb271d9675b9402a181090220" alt="image"></p></li><li><p>Android 一个键盘监听变化<a href="https://github.com/18511084155/KeyboardWatcher" target="_blank" rel="noopener">框架</a></p></li><li><p>Android build项目的时候Re-download dependencies and sync project (requires network)<br> 解决方法：</p><ul><li>第一种方法删除.gradle文件夹<br><img src="http://note.youdao.com/noteshare?id=889dfd7dbf849b1f26470c6b55d921c8&amp;sub=234C405A59BE465686F4183B84502171" alt="image"></li><li>第二种方法修改项目中gradle-wrapper.properties gradle版本</li></ul></li><li><p>Android 对TextView进行各种操作SpannableString 这个类很神奇详情请百度</p></li><li><p>Android 一个封装的很不错的pupwindow组件<a href="https://github.com/crazyqiang/AndroidStudy/tree/master/app/src/main/java/org/ninetripods/mq/study/popup" target="_blank" rel="noopener">库</a></p></li></ol>]]></content>
+      <title>linux mysql 用户配置</title>
+      <link href="/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/06/29/linux%20mysql%20%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h1 id="linux-mysql配置"><a href="#linux-mysql配置" class="headerlink" title="linux mysql配置"></a>linux mysql配置</h1><ol><li><a href="https://www.cnblogs.com/bookwed/p/5896619.html" target="_blank" rel="noopener">安装MySQL数据库</a>请参考该网站。</li><li><p>执行mysql -u username -p #username为用户名</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure></li><li><p>进入mysql，show databases;<br>查看所有的数据库。create database db_name 创建自己数据库<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#查看</span><br><span class="line">$ show databases;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">| wl_db              |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">#创建</span><br><span class="line">$ create database db_name;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure></li><li><p>添加用户<br>实例如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#添加只读用户</span><br><span class="line">GRANT SELECT ON *.* TO &apos;wl_read&apos;@&apos;%&apos; IDENTIFIED BY &quot;wlread&quot;;</span><br><span class="line"></span><br><span class="line">#撤销添加</span><br><span class="line">revoke SELECT ON *.*  from &apos;readonly&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">#添加外网可读可写用户</span><br><span class="line">GRANT all privileges ON *.* TO &apos;db_user&apos;@&apos;%&apos; IDENTIFIED BY &quot;wl123@&quot;;</span><br><span class="line"></span><br><span class="line">#记得添加防火墙开放端口</span><br><span class="line">firewall-cmd  --zone=public --add-port=3306/tcp --permanent</span><br></pre></td></tr></table></figure></li></ol><p>基本操作先到这里，后续有什么问题，继续补充</p>]]></content>
       
       
         <tags>
             
-            <tag> Android </tag>
+            <tag> linux mysql </tag>
             
         </tags>
       
@@ -87,6 +72,36 @@
         <tags>
             
             <tag> Android gradle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android 常见问题</title>
+      <link href="/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+      <url>/2018/05/22/Android%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<ol><li><p>常常在gradle编译时，出现异常，但是打印的异常信息较少不能准确定位到底是哪里有问题可执行如下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew processDebugManifest --stacktrace</span><br></pre></td></tr></table></figure></li><li><p>查看当前activity</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys activity activities</span><br></pre></td></tr></table></figure></li><li><p>Android Gson 对象Map转换 <a href="https://www.cnblogs.com/zsychanpin/p/6937832.html" target="_blank" rel="noopener">参考</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSONParse pare = new JSONParse();</span><br></pre></td></tr></table></figure></li><li><p>Android 颜色透明值列表<br><img src="http://note.youdao.com/noteshare?id=20681fb6df01851fe8ea60d402f99503&amp;sub=WEB4ec96fecb271d9675b9402a181090220" alt="image"></p></li><li><p>Android 一个键盘监听变化<a href="https://github.com/18511084155/KeyboardWatcher" target="_blank" rel="noopener">框架</a></p></li><li><p>Android build项目的时候Re-download dependencies and sync project (requires network)<br> 解决方法：</p><ul><li>第一种方法删除.gradle文件夹<br><img src="http://note.youdao.com/noteshare?id=889dfd7dbf849b1f26470c6b55d921c8&amp;sub=234C405A59BE465686F4183B84502171" alt="image"></li><li>第二种方法修改项目中gradle-wrapper.properties gradle版本</li></ul></li><li><p>Android 对TextView进行各种操作SpannableString 这个类很神奇详情请百度</p></li><li><p>Android 一个封装的很不错的pupwindow组件<a href="https://github.com/crazyqiang/AndroidStudy/tree/master/app/src/main/java/org/ninetripods/mq/study/popup" target="_blank" rel="noopener">库</a></p></li><li><p>Android gradle 打包部署指南。<a href="https://www.jianshu.com/p/d7279528e661" target="_blank" rel="noopener">gradle</a></p></li></ol>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Git 常用操作指南</title>
+      <link href="/2018/04/27/Git%20%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
+      <url>/2018/04/27/Git%20%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+      <content type="html"><![CDATA[<h1 id="Git-常用操作指南"><a href="#Git-常用操作指南" class="headerlink" title="Git 常用操作指南"></a>Git 常用操作指南</h1><ol><li><p>在我们常常去git 上clone一个项目的时候，会要求用户名和密码，这样输入会比较麻烦，这里给大家介绍一个好的git clone的方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone http://username:userpwd@192.168.1.103:3000/projectname/android-demo.git</span><br></pre></td></tr></table></figure></li><li><p>在我们git pull 或者git push 的时候常常要我们输入密码，每次都要输入，是不是很烦，设置一下吧</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure></li><li><p>查看提交历史</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure></li><li><p>给历史打tag</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.0 6224937</span><br></pre></td></tr></table></figure></li><li><p>推送打tag</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin v1.0</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
             
         </tags>
       
